@@ -1,0 +1,8 @@
+LoginPage:
+  LOGIN_FORM_ACCOUNT_SELECTOR : "s, #account"
+  LOGIN_FORM_PASSWORD_SELECTOR : "s, #password"
+  LOGIN_FORM_SUBMIT_SELECTOR : "s, #submit"
+  LOGIN_FORM_KEEP_SELECTOR : "s, #keepLoginon"
+  LOGIN_LANGUAGE_BUTTON_SELECTOR : "s, #langs > button"
+  LOGIN_LANGUAGE_MENU_SELECTOR : "s, #langs > ul > li:nth-child(%d) > a"
+  LOGIN_FAIL_MESSAGE_SELECTOR : "s, body > div.bootbox.modal.fade.bootbox-alert.in > div > div > div.modal-body"
