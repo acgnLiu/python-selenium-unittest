@@ -788,6 +788,7 @@ class CsvHelper(object):
 
         return data_ret
 
+''' csv文件 '''
 class Email(object):
 
     def email_attachment(self,report_file):
