@@ -1,5 +1,7 @@
-from base.base_box import Boxdriver, Browser
-from base.base_unittest import TestCase
+import os
+
+from base.base_box import BoxDriver, Browser
+from base.base_unittest_framework import TestCase
 from biz.zentao.login_page import LoginPage
 
 class ZentaoTest(TestCase):
@@ -7,11 +9,14 @@ class ZentaoTest(TestCase):
     base_url = None
     main_page = None
 
+    # 浏览器驱动所在位置
+    browser_driver_path = os.path.abspath(os.path.join(os.getcwd(), "../../chromeDriver/chromedriver.exe"))
+
     def set_up(self):
         """ 测试前置条件 """
         self.log("开始测试前置条件")
-        self.base_driver = Boxdriver(Browser.Chrome)
-        self.base_url = "http://localhost:81/zentaopms/www"
+        self.base_driver = BoxDriver(Browser.Chrome, self.browser_driver_path)
+        self.base_url = "http://pms.zentao.net/user-login-Lw==.html"
         self.login_page = LoginPage(self.base_driver, self.logger)
         self.log("完成测试前置条件")
 

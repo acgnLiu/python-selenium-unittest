@@ -2,7 +2,7 @@
 from runner.runner import Runner
 
 
-class Main(object):
+class main(object):
     """
     自动化测试方案的唯一执行入口
     """
@@ -16,4 +16,4 @@ class Main(object):
         Runner().run_test()
 
 if __name__ == "__main__":
-    Main.running()
+    main.running()

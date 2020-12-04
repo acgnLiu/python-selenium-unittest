@@ -1,19 +1,17 @@
 import time
-from base.base_box import CsvHelper, Email
-from base.base_unittest import TestSuite, TestRunner
+from base.base_box import Email, DataHelper
+from base.base_unittest_framework import TestSuite, TestRunner
 from case.zentao.zentao_test import ZentaoTest
 
 
 class Runner(object):
     def run_test(self):
-
-        """
-        运行测试
-        :return:
+        """  运行测试
+        :return: /
         """
         suite = TestSuite()
 
-        csv_data = CsvHelper().read_data_as_dict("runner/data/runner.csv")
+        csv_data = DataHelper().csv_read_data_as_dict("runner/data/runner.csv")
 
         test_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
 

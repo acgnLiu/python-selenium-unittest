@@ -1,4 +1,4 @@
-from base.base_box import BasePage, YamlHelper
+from base.base_box import BasePage
 
 
 class LoginPage(BasePage):
@@ -35,7 +35,6 @@ class LoginPage(BasePage):
         self.base_driver.type("i,account", account)
         self.base_driver.type("n,password", password)
         self.base_driver.click("i,submit")
-
 
     def login_by_cookie(self, cookie_dict, url=None):
         """
@@ -96,5 +95,3 @@ class LoginPage(BasePage):
     def get_loging_title(self):
         """ 获取当前网页标题 """
         return self.base_driver.get_title()
-
-
