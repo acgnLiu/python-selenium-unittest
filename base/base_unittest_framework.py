@@ -182,7 +182,9 @@ class _Outcome(object):
                 self.expectedFailure = exc_info
             else:
                 self.success = False
-                test_case.images.append(test_case.base_driver.save_window_snapshot_by_io())
+
+                #  ......
+                # test_case.images.append(test_case.base_driver.save_window_snapshot_by_io())
 
                 self.errors.append((test_case, exc_info))
             exc_info = None
