@@ -584,9 +584,9 @@ class Email(object):
             smtpserver = 'smtp.163.com'
             port = 25
             # 更改如下3项即可
-            sender = '15926723093@163.com'
-            psw = 'UUYRBQXQKBVJZQJX'
-            receiver = 'Otaku.acgn@qq.com'
+            sender = ''
+            psw = ''
+            receiver = ''
             msg = MIMEMultipart()
             msg['from'] = sender
             msg['to'] = ';'.join(receiver)
