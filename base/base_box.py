@@ -97,7 +97,7 @@ class BoxDriver(object):
         locator = self._concert_selector_to_locator(selector)
 
         if locator is not None:
-            self._base_driver.find_element(*locator)
+            return self._base_driver.find_element(*locator)
         else:
             raise NameError("Please enter a valid locator of targeting elements.")
 
@@ -106,11 +106,10 @@ class BoxDriver(object):
         :param selector:定位字符，字符串类型，"i, xxx"
         :return: /
         """
-
         locator = self._concert_selector_to_locator(selector)
 
         if locator is not None:
-            self._base_driver.find_elements(*locator)
+            return self._base_driver.find_elements(*locator)
         else:
             raise NameError("Please enter a valid locator of targeting elements.")
 

@@ -1,7 +1,8 @@
 import time
 from base.base_HTMLlTestRunner import HTMLTestRunner, TestSuite
 from base.base_box import DataHelper
-from case.zentao.zentao_test import ZentaoTest
+from case.MiHoYo.mihoyo_test import MihoyoTest
+
 
 class Runner(object):
 
@@ -24,8 +25,8 @@ class Runner(object):
 
             for i in range(test_count):
                 # 增加测试用例，这里要增加
-                if test_class == "ZentaoTest":
-                    suite.add_test(ZentaoTest(test_method, logger_file))
+                if test_class == "MihoyoTest":
+                    suite.add_test(MihoyoTest(test_method, logger_file))
 
         # 测试报告的文件
 
