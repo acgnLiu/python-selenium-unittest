@@ -1,6 +1,4 @@
-# from runner.ranzhi_runner import RanzhiRunner
 from runner.runner import Runner
-
 
 class main(object):
     """

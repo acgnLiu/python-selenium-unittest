@@ -32,25 +32,26 @@ class BoxDriver(object):
     _by_char = None
     _browser_driver_path = None
 
-    def __init__(self, brower_type=0, browser_driver_path=_browser_driver_path, by_char=","):
+    def __init__(self, brower_type=0, by_char=","):
         """  实例化 BoxDriver 时，选择要使用的浏览器。
         :param brower_type:
         :param browser_driver_path:
         """
+        self._by_char = by_char
+
         if brower_type == 0 or brower_type == Browser.Chrome:
-            driver = webdriver.Chrome(executable_path=browser_driver_path)
+            driver = webdriver.Chrome()
         elif brower_type == 1 or brower_type == Browser.Firefox:
-            driver = webdriver.Firefox(executable_path=browser_driver_path)
+            driver = webdriver.Firefox()
         elif brower_type == 2 or brower_type == Browser.Ie:
-            driver = webdriver.Ie(executable_path=browser_driver_path)
+            driver = webdriver.Ie()
         else:
-            driver = webdriver.PhantomJS(executable_path=browser_driver_path)
+            driver = webdriver.PhantomJS()
 
         # 未能打开浏览器时，抛出异常
         try:
             self._base_driver = driver
             self._by_char = by_char
-            self._browser_driver_path = browser_driver_path
         except Exception:
             raise NameError("Browser %s Not Found! " % brower_type)
 
@@ -489,7 +490,6 @@ class DataHelper(object):
         return data_ret
 
     def csv_read_data_as_dict(self, f, encoding="utf8"):
-
         data_ret = []
         with open(f, encoding=encoding, mode="r") as csv_file:
             csv_data = csv.DictReader(csv_file)

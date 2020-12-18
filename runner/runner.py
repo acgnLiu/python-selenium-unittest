@@ -1,13 +1,12 @@
 import time
-from base.base_box import Email, DataHelper
-from base.base_unittest_framework import TestSuite, TestRunner
+from base.base_HTMLlTestRunner import HTMLTestRunner, TestSuite
+from base.base_box import DataHelper
 from case.zentao.zentao_test import ZentaoTest
 
-
 class Runner(object):
+
     def run_test(self):
         """  运行测试
-        :return: /
         """
         suite = TestSuite()
 
@@ -32,13 +31,13 @@ class Runner(object):
 
         report_file = "./runner/report/zentao_automate_report_%s.html" % test_time
 
-        runner = TestRunner(file_name=report_file,
+        runner = HTMLTestRunner(file_name=report_file,
                             verbosity=2,
-                            title="禅道自动化测试报告",
+                            title="自动化测试报告",
                             description="具体测试报告内容如下: ")
         runner.run(suite)
 
         # 发送测试报告到指定邮箱
 
-        Email().email_attachment(report_file)
+        # Email().email_attachment(report_file)
 
