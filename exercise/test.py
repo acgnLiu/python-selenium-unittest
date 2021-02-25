@@ -36,5 +36,6 @@ def file_test(file_name):
 if __name__ == '__main__':
     pass
     # file_test(file_name = sys.stdout)
-    csv_data = DataHelper().csv_read_data_as_dict("../case/data/csv/zentao_test.csv")
-    print("csv_data = ", csv_data)
+    # csv_data = DataHelper().csv_read_data_as_dict("../case/data/csv/zentao_test.csv")
+    # print("csv_data = ", csv_data)
+    print("hello,python")
